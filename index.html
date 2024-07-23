@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Voting Website</title>
+</head>
+<body>
+    <div id="container">
+        <!-- Title Page -->
+        <div class="page active" id="titlePage">
+            <h1>EVERY VOTE COUNTS!!</h1>
+            <button onclick="showPage('loginPage')">Login</button>
+        </div>
+
+        <!-- Login Page -->
+        <div class="page" id="loginPage">
+            <h2>Login</h2>
+            <div class="textbox">
+                <input type="text" placeholder="CNIC (13 digits)" maxlength="13">
+                <p class="error-message">CNIC must be exactly 13 digits.</p>
+            </div>
+            <div class="textbox">
+                <input type="password" placeholder="Password">
+                <p class="error-message">Password must be 8-20 characters, including uppercase, lowercase, number, and special character.</p>
+            </div>
+            <button onclick="showPage('questionsPage')">Login</button>
+        </div>
+
+        <!-- Questions Page -->
+        <div class="page" id="questionsPage">
+            <h2>Survey Questions</h2>
+            <div class="question">
+                <p>How satisfied are you with the current system?</p>
+                <input type="radio" name="q1" value="strongly disagree"> Strongly Disagree<br>
+                <input type="radio" name="q1" value="somewhat disagree"> Somewhat Disagree<br>
+                <input type="radio" name="q1" value="neutral"> Neutral<br>
+                <input type="radio" name="q1" value="somewhat agree"> Somewhat Agree<br>
+                <input type="radio" name="q1" value="strongly agree"> Strongly Agree<br>
+            </div>
+            <div class="question">
+                <p>How much do you prefer the current system?</p>
+                <input type="radio" name="q2" value="strongly disagree"> Strongly Disagree<br>
+                <input type="radio" name="q2" value="somewhat disagree"> Somewhat Disagree<br>
+                <input type="radio" name="q2" value="neutral"> Neutral<br>
+                <input type="radio" name="q2" value="somewhat agree"> Somewhat Agree<br>
+                <input type="radio" name="q2" value="strongly agree"> Strongly Agree<br>
+            </div>
+            <div class="question">
+                <p>How confident are you in the current system?</p>
+                <input type="radio" name="q3" value="strongly disagree"> Strongly Disagree<br>
+                <input type="radio" name="q3" value="somewhat disagree"> Somewhat Disagree<br>
+                <input type="radio" name="q3" value="neutral"> Neutral<br>
+                <input type="radio" name="q3" value="somewhat agree"> Somewhat Agree<br>
+                <input type="radio" name="q3" value="strongly agree"> Strongly Agree<br>
+            </div>
+            <div class="question">
+                <p>How likely are you to support the current system?</p>
+                <input type="radio" name="q4" value="strongly disagree"> Strongly Disagree<br>
+                <input type="radio" name="q4" value="somewhat disagree"> Somewhat Disagree<br>
+                <input type="radio" name="q4" value="neutral"> Neutral<br>
+                <input type="radio" name="q4" value="somewhat agree"> Somewhat Agree<br>
+                <input type="radio" name="q4" value="strongly agree"> Strongly Agree<br>
+            </div>
+            <div class="question">
+                <p>How do you rate the overall performance of the current system?</p>
+                <input type="radio" name="q5" value="strongly disagree"> Strongly Disagree<br>
+                <input type="radio" name="q5" value="somewhat disagree"> Somewhat Disagree<br>
+                <input type="radio" name="q5" value="neutral"> Neutral<br>
+                <input type="radio" name="q5" value="somewhat agree"> Somewhat Agree<br>
+                <input type="radio" name="q5" value="strongly agree"> Strongly Agree<br>
+            </div>
+            <button onclick="showPage('thankYouPage')">Submit</button>
+        </div>
+
+        <!-- Thank You Page -->
+        <div class="page" id="thankYouPage">
+            <h2>Thank you for your precious time and views!</h2>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
